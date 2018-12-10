@@ -323,8 +323,8 @@ class IMF(object):
             i = maxk
             Fmax = F[i] + 1. / self.norm * ( self.coeffcont[i] / (beta[i]) ) * ( massMax ** (beta[i]) - self.massinf[i] ** (beta[i]) )
 
-        x = np.random.uniform(Fmin, Fmax, N)
-        y = np.zeros(N)
+        x = np.random.uniform(Fmin, Fmax, np.int64(N))
+        y = np.zeros(np.int64(N))
         for k in range(self.nIMFbins):
             ind = np.where((x >= F[k]) & (x < F[k + 1]))
             if len((ind)[0]) > 0:
